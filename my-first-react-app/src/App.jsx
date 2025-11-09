@@ -1,83 +1,106 @@
 import { useState } from 'react';
 import './App.css';
 
-import Greetings from './components/Greeting';
+import Greeting from './components/Greeting';
 import Header from './components/Header';
 import Button from './components/Button';
 import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0);
-  const [isLearning, setIsLearning] = useState(true);
+import Counter from './components/Counter';
+import TodoList from './components/TodoList';
+import UserProfile from './components/UserProfile';
+import ThemeSwitcher from './components/ThemeSwitcher';
 
-  const footerLinks = [
-    { text: 'Github', url: 'https://github.com/DannSF' },
-    { text: 'LinkedIn', url: 'https://linkedin.com/in/dannyflores' },
-    { text: 'Portfolio', url: '#' },
-  ];
+function App() {
+  const [activeSection, setActiveSection] = useState('counters');
+
+  const sections = {
+    counters: '🧮 Counters',
+    todos: '📝 Todo List',
+    profile: '👤 Profile',
+    theme: '🎨 Theme',
+  };
 
   return (
     <div className="app">
-      {
-        <>
-          <Header
-            title="🎯 REact Components & Props"
-            subtitle="Aprendiendo a crear componentes reutilizables"
-            showCounter={true}
-          />
-          <main className="main-content">
-            <Greetings name="Danny" age={27} country="Ecuador" />
-            <Greetings name="Ana" country="Colombia" />
-            <Greetings name="Carlos" age={30} />
+      <Header
+        title="🚀 React useState Mastery"
+        subtitle="Day 3: State Management in Components"
+      />
 
-            <div className="card">
-              <h3>🚀 Interactive Section</h3>
-              <p>
-                Current count: <strong>{count}</strong>
-              </p>
-              <div className="button-group">
-                <Button variant="primary" onClick={() => setCount(count + 1)}>
-                  👍 Increment
-                </Button>
-                <Button variant="secondary" onClick={() => setCount(count - 1)}>
-                  👎 Decrement
-                </Button>
-                <Button variant="danger" onClick={() => setCount(0)}>
-                  🔄 Reset
-                </Button>
+      <main className="main-content">
+        {/* Navegación entre secciones */}
+        <nav className="section-nav">
+          {Object.entries(sections).map(([key, label]) => (
+            <Button
+              key={key}
+              variant={activeSection === key ? 'primary' : 'secondary'}
+              onClick={() => setActiveSection(key)}
+            >
+              {label}
+            </Button>
+          ))}
+        </nav>
+
+        {/* Sección activa */}
+        <div className="active-section">
+          {activeSection === 'counters' && (
+            <div className="counters-section">
+              <h2>Multiple Counters Demo</h2>
+              <div className="counters-grid">
+                <Counter initialValue={0} step={1} />
+                <Counter initialValue={10} step={5} />
+                <Counter initialValue={-5} step={2} />
+                <Counter initialValue={100} step={10} />
               </div>
-              <Button
-                variant="success"
-                onClick={() => setIsLearning(!isLearning)}
-              >
-                {isLearning ? '🎓 Learning React' : '💡 Mastered React'}
-              </Button>
+            </div>
+          )}
 
-              {count < 5 && (
-                <p className="hint">
-                  🔒 Complete 5 clicks to toggle learning status
-                </p>
-              )}
+          {activeSection === 'todos' && (
+            <div className="todos-section">
+              <h2>Interactive Todo List</h2>
+              <TodoList />
             </div>
-            <div className="props-demo">
-              <h3>🎨 Button Variant Demos</h3>
-              <Button variant="primary" size="small">
-                Small
-              </Button>
-              <Button variant="secondary" size="medium">
-                Medium
-              </Button>
-              <Button variant="danger" size="large">
-                Large
-              </Button>
-              <Button variant="success" disable>
-                Small
-              </Button>
+          )}
+
+          {activeSection === 'profile' && (
+            <div className="profile-section">
+              <h2>User Profile Management</h2>
+              <UserProfile />
             </div>
-          </main>
-          <Footer author="Danny Flores" links={footerLinks}></Footer>
-        </>
-      }
+          )}
+
+          {activeSection === 'theme' && (
+            <div className="theme-section">
+              <h2>Dynamic Theme Switcher</h2>
+              <ThemeSwitcher />
+            </div>
+          )}
+        </div>
+
+        {/* Demostración adicional de useState */}
+        <div className="useState-demo">
+          <h3>🎯 useState in Action</h3>
+          <Greeting name="Danny" age={28} country="Ecuador" />
+
+          <div className="demo-note">
+            <p>
+              <strong>Note:</strong> Each component above manages its own state
+              independently using useState. This is the power of React's
+              component-based architecture!
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <Footer
+        author="Danny Flores"
+        year={2024}
+        links={[
+          { text: 'GitHub', url: 'https://github.com/DannSF' },
+          { text: 'LinkedIn', url: 'https://linkedin.com/in/dannyflores' },
+        ]}
+      />
     </div>
   );
 }
