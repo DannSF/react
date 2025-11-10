@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
 
 import Greeting from './components/Greeting';
@@ -11,6 +11,9 @@ import TodoList from './components/TodoList';
 import UserProfile from './components/UserProfile';
 import ThemeSwitcher from './components/ThemeSwitcher';
 
+import ProductList from './components/ProductList';
+import { useState } from 'react';
+
 function App() {
   const [activeSection, setActiveSection] = useState('counters');
 
@@ -19,13 +22,14 @@ function App() {
     todos: '📝 Todo List',
     profile: '👤 Profile',
     theme: '🎨 Theme',
+    products: '🛍️ Products',
   };
 
   return (
     <div className="app">
       <Header
-        title="🚀 React useState Mastery"
-        subtitle="Day 3: State Management in Components"
+        title="🚀 React Conditional Rendering & Lists"
+        subtitle="Day 4: Mastering .map() and Conditional Display"
       />
 
       <main className="main-content">
@@ -78,19 +82,16 @@ function App() {
           )}
         </div>
 
-        {/* Demostración adicional de useState */}
-        <div className="useState-demo">
-          <h3>🎯 useState in Action</h3>
-          <Greeting name="Danny" age={28} country="Ecuador" />
-
-          <div className="demo-note">
-            <p>
-              <strong>Note:</strong> Each component above manages its own state
-              independently using useState. This is the power of React's
-              component-based architecture!
+        {activeSection === 'products' && (
+          <div className="product-section">
+            <h2>Product Managment with Lists</h2>
+            <p className="section-description">
+              Manage products with filtering, sorting, and conditional rendering
+              when empty.
             </p>
+            <ProductList />
           </div>
-        </div>
+        )}
       </main>
 
       <Footer

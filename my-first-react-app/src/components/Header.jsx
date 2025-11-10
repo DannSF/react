@@ -6,7 +6,7 @@ function Header({ title, subtitle, showCounter = true }) {
 
       {showCounter && (
         <div className="counter-badge">
-          <span>🚀 Day 2 of React</span>
+          <span>🚀 Day 4 of React</span>
         </div>
       )}
     </header>
