@@ -12,6 +12,8 @@ import UserProfile from './components/UserProfile';
 import ThemeSwitcher from './components/ThemeSwitcher';
 
 import ProductList from './components/ProductList';
+import UserManagment from './components/UserManagment';
+
 import { useState } from 'react';
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
     profile: '👤 Profile',
     theme: '🎨 Theme',
     products: '🛍️ Products',
+    users: '👥 Users',
   };
 
   return (
@@ -90,6 +93,16 @@ function App() {
               when empty.
             </p>
             <ProductList />
+          </div>
+        )}
+
+        {activeSection === 'users' && (
+          <div className="users-section">
+            <h2>User Management System</h2>
+            <p className="section-description">
+              Search, filter, and manage users with advanced list operations.
+            </p>
+            <UserManagment />
           </div>
         )}
       </main>
