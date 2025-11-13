@@ -752,6 +752,132 @@ counter {
   border-radius: 10px;
 }
 
+.notification-system {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.notification-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.unread-badge {
+  background: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.sample-notifications {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sample-notifications span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.notifications-list {
+  margin: 1.5rem 0;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+  background: #f8f9fa;
+}
+
+.notification-item.unread {
+  background: #f0f7ff;
+  border-left: 4px solid #667eea;
+}
+
+.notification-item.success {
+  border-left: 4px solid #28a745;
+}
+
+.notification-item.error {
+  border-left: 4px solid #dc3545;
+}
+
+.notification-item.warning {
+  border-left: 4px solid #ffc107;
+}
+
+.notification-item.info {
+  border-left: 4px solid #17a2b8;
+}
+
+.notification-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-message {
+  margin: 0;
+  font-weight: 500;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.unread-indicator {
+  width: 8px;
+  height: 8px;
+  background: #dc3545;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.notification-stats {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
 @media (max-width: 768px) {
   .main-content {
     padding: 1rem;

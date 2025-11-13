@@ -1,4 +1,5 @@
 // import { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 import Greeting from './components/Greeting';
@@ -13,8 +14,7 @@ import ThemeSwitcher from './components/ThemeSwitcher';
 
 import ProductList from './components/ProductList';
 import UserManagment from './components/UserManagment';
-
-import { useState } from 'react';
+import NotificationSystem from './components/NotificationSystem';
 
 function App() {
   const [activeSection, setActiveSection] = useState('counters');
@@ -26,6 +26,7 @@ function App() {
     theme: '🎨 Theme',
     products: '🛍️ Products',
     users: '👥 Users',
+    notifications: '🔔 Notifications',
   };
 
   return (
@@ -83,28 +84,39 @@ function App() {
               <ThemeSwitcher />
             </div>
           )}
+
+          {activeSection === 'products' && (
+            <div className="product-section">
+              <h2>Product Managment with Lists</h2>
+              <p className="section-description">
+                Manage products with filtering, sorting, and conditional
+                rendering when empty.
+              </p>
+              <ProductList />
+            </div>
+          )}
+
+          {activeSection === 'users' && (
+            <div className="users-section">
+              <h2>User Management System</h2>
+              <p className="section-description">
+                Search, filter, and manage users with advanced list operations.
+              </p>
+              <UserManagment />
+            </div>
+          )}
+
+          {activeSection === 'notifications' && (
+            <div className="notifications-section">
+              <h2>Notifications System</h2>
+              <p className="section-description">
+                Real-world notification system with conditional rendering based
+                on status.
+              </p>
+              <NotificationSystem />
+            </div>
+          )}
         </div>
-
-        {activeSection === 'products' && (
-          <div className="product-section">
-            <h2>Product Managment with Lists</h2>
-            <p className="section-description">
-              Manage products with filtering, sorting, and conditional rendering
-              when empty.
-            </p>
-            <ProductList />
-          </div>
-        )}
-
-        {activeSection === 'users' && (
-          <div className="users-section">
-            <h2>User Management System</h2>
-            <p className="section-description">
-              Search, filter, and manage users with advanced list operations.
-            </p>
-            <UserManagment />
-          </div>
-        )}
       </main>
 
       <Footer
