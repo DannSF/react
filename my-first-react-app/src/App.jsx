@@ -16,8 +16,11 @@ import ProductList from './components/ProductList';
 import UserManagment from './components/UserManagment';
 import NotificationSystem from './components/NotificationSystem';
 
+import ProductForm from './components/forms/ProductForm';
+
 function App() {
   const [activeSection, setActiveSection] = useState('counters');
+  const [formProducts, setFormProducts] = useState([]);
 
   const sections = {
     counters: '🧮 Counters',
@@ -27,6 +30,11 @@ function App() {
     products: '🛍️ Products',
     users: '👥 Users',
     notifications: '🔔 Notifications',
+    productForm: '📝 Product Form',
+  };
+
+  const handleAddProduct = (product) => {
+    setFormProducts((prev) => [product, ...prev]);
   };
 
   return (
@@ -116,12 +124,47 @@ function App() {
               <NotificationSystem />
             </div>
           )}
+
+          {activeSection === 'productForm' && (
+            <div className="forms-section">
+              <h2>Product Form with Validation</h2>
+              <p className="section-description">
+                Advanced form with real-time validation and user feedback.
+              </p>
+              <div className="form-demo">
+                <div className="form-container">
+                  <ProductForm onAddProduct={handleAddProduct} />
+                </div>
+                <div className="form-preview">
+                  <h4>📦 Products Added ({formProducts.length})</h4>
+                  {formProducts.length === 0 ? (
+                    <p className="empty-state">No products added yet</p>
+                  ) : (
+                    <div className="preview-list">
+                      {formProducts.map((product) => (
+                        <div key={product.id} className="preview-item">
+                          <strong>{product.name}</strong> ${product.price}
+                          <span
+                            className={`badge ${
+                              product.inStock ? 'success' : 'warning'
+                            }`}
+                          >
+                            {product.inStock ? 'In Stock' : 'Out of Stock'}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </main>
 
       <Footer
         author="Danny Flores"
-        year={2024}
+        year={2025}
         links={[
           { text: 'GitHub', url: 'https://github.com/DannSF' },
           { text: 'LinkedIn', url: 'https://linkedin.com/in/dannyflores' },
