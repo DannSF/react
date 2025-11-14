@@ -1,3 +1,4 @@
+// import { useState } from 'react';
 import { useState } from 'react';
 import './App.css';
 
@@ -11,6 +12,10 @@ import TodoList from './components/TodoList';
 import UserProfile from './components/UserProfile';
 import ThemeSwitcher from './components/ThemeSwitcher';
 
+import ProductList from './components/ProductList';
+import UserManagment from './components/UserManagment';
+import NotificationSystem from './components/NotificationSystem';
+
 function App() {
   const [activeSection, setActiveSection] = useState('counters');
 
@@ -19,13 +24,16 @@ function App() {
     todos: '📝 Todo List',
     profile: '👤 Profile',
     theme: '🎨 Theme',
+    products: '🛍️ Products',
+    users: '👥 Users',
+    notifications: '🔔 Notifications',
   };
 
   return (
     <div className="app">
       <Header
-        title="🚀 React useState Mastery"
-        subtitle="Day 3: State Management in Components"
+        title="🚀 React Conditional Rendering & Lists"
+        subtitle="Day 4: Mastering .map() and Conditional Display"
       />
 
       <main className="main-content">
@@ -76,20 +84,38 @@ function App() {
               <ThemeSwitcher />
             </div>
           )}
-        </div>
 
-        {/* Demostración adicional de useState */}
-        <div className="useState-demo">
-          <h3>🎯 useState in Action</h3>
-          <Greeting name="Danny" age={28} country="Ecuador" />
+          {activeSection === 'products' && (
+            <div className="product-section">
+              <h2>Product Managment with Lists</h2>
+              <p className="section-description">
+                Manage products with filtering, sorting, and conditional
+                rendering when empty.
+              </p>
+              <ProductList />
+            </div>
+          )}
 
-          <div className="demo-note">
-            <p>
-              <strong>Note:</strong> Each component above manages its own state
-              independently using useState. This is the power of React's
-              component-based architecture!
-            </p>
-          </div>
+          {activeSection === 'users' && (
+            <div className="users-section">
+              <h2>User Management System</h2>
+              <p className="section-description">
+                Search, filter, and manage users with advanced list operations.
+              </p>
+              <UserManagment />
+            </div>
+          )}
+
+          {activeSection === 'notifications' && (
+            <div className="notifications-section">
+              <h2>Notifications System</h2>
+              <p className="section-description">
+                Real-world notification system with conditional rendering based
+                on status.
+              </p>
+              <NotificationSystem />
+            </div>
+          )}
         </div>
       </main>
 

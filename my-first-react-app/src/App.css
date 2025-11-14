@@ -459,6 +459,425 @@ counter {
   color: #856404;
 }
 
+.section-description {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Product List Styles */
+.product-list {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.add-product-form {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.form-input {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.product-controls {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.products-grid {
+  margin: 1.5rem 0;
+}
+
+.products-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: #667eea;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.product-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.product-item:hover {
+  background: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.product-item.out-of-stock {
+  background: #fff3cd;
+  border-color: #ffeaa7;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-category {
+  background: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.stock-status.in-stock {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.stock-status.out-of-stock {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.product-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.product-stats {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.user-management {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.management-controls {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  align-items: end;
+}
+
+.search-input {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 300px;
+}
+
+.filter-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.results-info {
+  background: #e3f2fd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.users-table {
+  margin: 1.5rem 0;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: #667eea;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.user-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.user-row:hover {
+  background: #f8f9fa;
+}
+
+.user-row.inactive {
+  background: #f8f9fa;
+  opacity: 0.7;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.user-email {
+  color: #6c757d;
+}
+
+.user-role {
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.role-admin {
+  background: #dc3545;
+  color: white;
+}
+
+.role-moderator {
+  background: #fd7e14;
+  color: white;
+}
+
+.role-user {
+  background: #6c757d;
+  color: white;
+}
+
+.user-status.active {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.user-status.inactive {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.user-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.management-stats {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.notification-system {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.notification-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.unread-badge {
+  background: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.sample-notifications {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sample-notifications span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.notifications-list {
+  margin: 1.5rem 0;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+  background: #f8f9fa;
+}
+
+.notification-item.unread {
+  background: #f0f7ff;
+  border-left: 4px solid #667eea;
+}
+
+.notification-item.success {
+  border-left: 4px solid #28a745;
+}
+
+.notification-item.error {
+  border-left: 4px solid #dc3545;
+}
+
+.notification-item.warning {
+  border-left: 4px solid #ffc107;
+}
+
+.notification-item.info {
+  border-left: 4px solid #17a2b8;
+}
+
+.notification-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-message {
+  margin: 0;
+  font-weight: 500;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.unread-indicator {
+  width: 8px;
+  height: 8px;
+  background: #dc3545;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.notification-stats {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
 @media (max-width: 768px) {
   .main-content {
     padding: 1rem;
